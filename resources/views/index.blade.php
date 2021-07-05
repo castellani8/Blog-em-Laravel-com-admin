@@ -2,4 +2,6 @@
 
 @section('content')
 
+<div class="container"> Lucas </div>
+
 @endsection
