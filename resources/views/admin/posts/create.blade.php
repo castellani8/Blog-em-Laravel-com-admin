@@ -25,18 +25,30 @@
     
     <div class="dash_content_app_box">
     
-        <form action="{{ route('admin.posts.store') }}">
+        <form action="{{ route('admin.posts.store') }}" enctype="multipart/form-data" method="post">
+            @csrf
             <label for="titulo" class=""><span style="font-size: 1em">Título da postagem: </span></label>
             <input type="text" id="titulo" name="titulo" placeholder="insira o titulo" size="40" required>
             <br><br>
             <span style="font-size: 1em">Insira o conteúdo do post: </span>
             <div class="my-1">
-            <textarea class="ckeditor form-control" name="wysiwyg" id="wysiwyg" required></textarea>
-            <br>
-            <label for="autor" class=""><span style="font-size: 1em">Nome do autor: </span></label>
-            <input type="text" id="autor" name="autor" placeholder="Autor" size="40" required/>
-            <button type="submit" class="btn" style="background-color:green">Postar!</button>
-        </div>
+
+                <textarea class="ckeditor form-control" name="wysiwyg" id="wysiwyg" required></textarea>
+
+                <br>
+
+                <label for="image" class="btn" style="background-color: green">Insira a imagem do post</label>
+                <input id="image" name="image" class="my-1 d-none" size="60" type="file" accept="image/*"/>
+
+                <br>
+                <br>
+
+                <label for="autor" class=""><span style="font-size: 1em">Nome do autor: </span></label>
+                <input type="text" id="autor" name="autor" placeholder="Autor" size="40" required/>
+
+                <button type="submit" class="btn" style="background-color:green">Postar!</button>
+
+            </div>
         </form>
         
     </div>

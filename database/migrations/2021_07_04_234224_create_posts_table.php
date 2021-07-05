@@ -18,6 +18,7 @@ class CreatePostsTable extends Migration
             $table->string('titulo');
             $table->text('texto');
             $table->text('autor');
+            $table->string('imagem')->nullable();
             $table->timestamps();
         });
     }

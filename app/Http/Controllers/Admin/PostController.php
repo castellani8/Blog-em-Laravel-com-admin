@@ -37,13 +37,23 @@ class PostController extends Controller
      */
     public function store(Request $request)
     {
-        $post = new Posts;
-        $post->titulo = $request->titulo;
-        $post->texto = $request->wysiwyg;
-        $post->autor = $request->autor;
-        $post->save();
+        $filename = $request->file('image')->getClientOriginalName();
 
-        return redirect()->route('index');
+        $extension = $request->file('image')->extension();
+
+        $path = $request->file('image')->storeAs(
+            'images', date("Y/m/d") . "." . $extension
+        );
+
+        var_dump($filename); 
+
+        // $post = new Posts;
+        // $post->titulo = $request->titulo;
+        // $post->texto = $request->wysiwyg;
+        // $post->autor = $request->autor;
+        // $post->save();
+
+        // return redirect()->route('index');
     }
 
     /**

@@ -29,7 +29,7 @@ Route::group(['prefix' => 'admin', 'namespace' => 'Admin', 'as' => 'admin.'], fu
 
         Route::get('posts', 'PostController@index')->name('posts');
         Route::get('create/post', 'PostController@create')->name('posts.create');
-        Route::get('posts.store', 'PostController@store')->name('posts.store');
+        Route::post('posts.store', 'PostController@store')->name('posts.store');
         
     });
    
