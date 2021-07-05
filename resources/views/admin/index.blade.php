@@ -4,9 +4,9 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width,initial-scale=1">
 
-    <link rel="stylesheet" href="{{ mix('backend/assets/css/reset.css') }}"/>
-    <link rel="stylesheet" href="{{ mix('backend/assets/css/boot.css') }}"/>
-    <link rel="stylesheet" href="{{ mix('backend/assets/css/login.css') }}"/>
+    <link rel="stylesheet" href="{{ url('backend/assets/css/reset.css') }}"/>
+    <link rel="stylesheet" href="{{ url('backend/assets/css/boot.css') }}"/>
+    <link rel="stylesheet" href="{{ url('backend/assets/css/login.css') }}"/>
     <link rel="icon" type="image/png" href="assets/images/favicon.png"/>
     <meta name="csrf-token" content="{{ csrf_token() }}">
     <title>UpAdmin - Site Control</title>
@@ -55,7 +55,7 @@
 </div>
 
 <script src="https://code.jquery.com/jquery-3.6.0.js" integrity="sha256-H+K7U5CnXl1h5ywQfKtSj8PCmoN9aaq30gDh27Xc0jk=" crossorigin="anonymous"></script>
-<script src="{{ mix('backend/assets/js/login.js') }}"></script>
+<script src="{{ asset('backend/assets/js/login.js') }}"></script>
 
 </body>
 </html>

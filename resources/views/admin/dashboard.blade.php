@@ -11,22 +11,22 @@
         <div class="dash_content_app_box">
             <section class="app_dash_home_stats">
                 <article class="control radius">
-                    <h4 class="icon-users">Clientes</h4>
+                    <h4 class="icon-users">Usuários</h4>
                     <p><b>Locadores:</b> 100</p>
                     <p><b>Locatários:</b> 100</p>
                     <p><b>Time:</b> 3</p>
                 </article>
 
                 <article class="blog radius">
-                    <h4 class="icon-home">Imóveis</h4>
+                    <h4 class="icon-home">Posts</h4>
                     <p><b>Disponíveis:</b> 100</p>
                     <p><b>Locados:</b> 100</p>
                     <p><b>Total:</b> 200</p>
                 </article>
 
                 <article class="users radius">
-                    <h4 class="icon-file-text">Contratos</h4>
-                    <p><b>Oficializados:</b> 455</p>
+                    <h4 class="icon-file-text">Doação</h4>
+                    <p><b>Oficializados:</b> 0</p>
                 </article>
             </section>
         </div>
@@ -34,7 +34,7 @@
 
     <section class="dash_content_app" style="margin-top: 40px;">
         <header class="dash_content_app_header">
-            <h2 class="icon-tachometer">Últimos Contratos Cadastrados</h2>
+            <h2 class="icon-tachometer">Últimos posts</h2>
         </header>
 
         <div class="dash_content_app_box">
@@ -42,18 +42,18 @@
                 <table id="dataTable" class="nowrap hover stripe" width="100" style="width: 100% !important;">
                     <thead>
                     <tr>
-                        <th>Locador</th>
-                        <th>Locatário</th>
-                        <th>Negócio</th>
+                        <th>Criador</th>
+                        <th>Título</th>
+                        <th>Tipo</th>
                         <th>Início</th>
                         <th>Vigência</th>
                     </tr>
                     </thead>
                     <tbody>
                     <tr>
-                        <td><a href="" class="text-orange">Robson V. Leite</a></td>
-                        <td><a href="" class="text-orange">Gustavo Web</a></td>
-                        <td>Locação</td>
+                        <td><a href="" class="text-orange">Lucas Castellani</a></td>
+                        <td><a href="" class="text-orange">Como se batizar no espírito santo</a></td>
+                        <td>informativo</td>
                         <td><?= date('d/m/Y'); ?></td>
                         <td>12 meses</td>
                     </tr>
@@ -65,7 +65,7 @@
 
     <section class="dash_content_app" style="margin-top: 40px;">
         <header class="dash_content_app_header">
-            <h2 class="icon-tachometer">Últimos Imóveis Cadastrados</h2>
+            <h2 class="icon-tachometer">Últimos posts Cadastrados</h2>
         </header>
 
         <div class="dash_content_app_box">

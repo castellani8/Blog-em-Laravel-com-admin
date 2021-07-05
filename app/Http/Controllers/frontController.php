@@ -12,4 +12,5 @@ class frontController extends Controller
         $posts = Posts::all()->take(8);
         return view('index', compact('posts', $posts));
     }
+
 }

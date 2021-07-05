@@ -4,10 +4,10 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width,initial-scale=1,maximum-scale=1,user-scalable=0">
 
-    <link rel="stylesheet" href="{{ mix('backend/assets/css/reset.css') }}"/>
-    <link rel="stylesheet" href="{{ mix('backend/assets/css/libs.css') }}">
-    <link rel="stylesheet" href="{{ mix('backend/assets/css/boot.css') }}"/>
-    <link rel="stylesheet" href="{{ mix('backend/assets/css/style.css') }}"/>
+    <link rel="stylesheet" href="{{ asset('backend/assets/css/reset.css') }}"/>
+    <link rel="stylesheet" href="{{ asset('backend/assets/css/libs.css') }}">
+    <link rel="stylesheet" href="{{ asset('backend/assets/css/boot.css') }}"/>
+    <link rel="stylesheet" href="{{ asset('backend/assets/css/style.css') }}"/>
     <link rel="icon" type="image/png" href="assets/images/favicon.png"/>
 
 @hasSection('css')
@@ -35,7 +35,7 @@
             <img class="dash_sidebar_user_thumb" src="{{ url(asset('backend/assets/images/avatar.jpg')) }}" alt="" title=""/>
 
             <h1 class="dash_sidebar_user_name">
-                <a href="">Gustavo Web</a>
+                <a href="">Bem vindo de volta, <b>Lucas Castellani</b></a>
             </h1>
         </article>
 
@@ -43,24 +43,18 @@
             <li class="dash_sidebar_nav_item {{ isActive('admin.home') }}">
                 <a class="icon-tachometer" href="{{ route('admin.home') }}">Dashboard</a>
             </li>
-            <li class="dash_sidebar_nav_item"><a class="icon-users" href="dashboard.php?app=users/index">Clientes</a>
+            <li class="dash_sidebar_nav_item"><a class="icon-users" href="dashboard.php?app=users/index">Usuários</a>
                 <ul class="dash_sidebar_nav_submenu">
                     <li class=""><a href="dashboard.php?app=users/index">Ver Todos</a></li>
-                    <li class=""><a href="dashboard.php?app=companies/index">Empresas</a></li>
+                    <li class=""><a href="dashboard.php?app=companies/index">Editar usuários</a></li>
                     <li class=""><a href="dashboard.php?app=users/team">Time</a></li>
                     <li class=""><a href="dashboard.php?app=users/create">Criar Novo</a></li>
                 </ul>
             </li>
-            <li class="dash_sidebar_nav_item"><a class="icon-home" href="dashboard.php?app=properties/index">Imóveis</a>
+            <li class="dash_sidebar_nav_item"><a class="icon-home" href="dashboard.php?app=properties/index">Posts</a>
                 <ul class="dash_sidebar_nav_submenu">
                     <li class=""><a href="dashboard.php?app=properties/index">Ver Todos</a></li>
-                    <li class=""><a href="dashboard.php?app=properties/create">Criar Novo</a></li>
-                </ul>
-            </li>
-            <li class="dash_sidebar_nav_item"><a class="icon-file-text" href="dashboard.php?app=contracts/index">Contratos</a>
-                <ul class="dash_sidebar_nav_submenu">
-                    <li class=""><a href="dashboard.php?app=contracts/index">Ver Todos</a></li>
-                    <li class=""><a href="dashboard.php?app=contracts/create">Criar Novo</a></li>
+                    <li class=""><a href="{{ route('admin.posts.create') }}">Criar Novo</a></li>
                 </ul>
             </li>
             <li class="dash_sidebar_nav_item"><a class="icon-reply" href="">Ver Site</a></li>
@@ -92,7 +86,7 @@
 </div>
 
 <script src="https://code.jquery.com/jquery-3.6.0.js" integrity="sha256-H+K7U5CnXl1h5ywQfKtSj8PCmoN9aaq30gDh27Xc0jk=" crossorigin="anonymous"></script>
-<script src="{{ mix('backend/assets/js/libs.js') }}"></script>
+<script src="{{ asset('backend/assets/js/libs.js') }}"></script>
 <script src="{{ asset('backend/assets/js/scripts.js') }}" type="text/javascript"></script>
 
 @hasSection('js')
