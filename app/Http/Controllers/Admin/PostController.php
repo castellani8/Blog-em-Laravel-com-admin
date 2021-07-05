@@ -40,17 +40,18 @@ class PostController extends Controller
         $filename = $request->file('image')->getClientOriginalName();
 
         $extension = $request->file('image')->extension();
-
+        
         $path = $request->file('image')->storeAs(
-            'images', date("Y/m/d") . "." . $extension
+            'public/images', date("m.d.y") .".". $extension
         );
 
-        var_dump($filename); 
+        var_dump($path); 
 
         // $post = new Posts;
         // $post->titulo = $request->titulo;
         // $post->texto = $request->wysiwyg;
         // $post->autor = $request->autor;
+        // $post->image = $path;
         // $post->save();
 
         // return redirect()->route('index');
