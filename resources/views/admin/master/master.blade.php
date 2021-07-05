@@ -51,9 +51,9 @@
                     <li class=""><a href="dashboard.php?app=users/create">Criar Novo</a></li>
                 </ul>
             </li>
-            <li class="dash_sidebar_nav_item"><a class="icon-home" href="dashboard.php?app=properties/index">Posts</a>
+            <li class="dash_sidebar_nav_item"><a class="icon-home" href="{{ route('admin.posts') }}">Posts</a>
                 <ul class="dash_sidebar_nav_submenu">
-                    <li class=""><a href="dashboard.php?app=properties/index">Ver Todos</a></li>
+                    <li class=""><a href="{{ route('admin.posts') }}">Ver Todos</a></li>
                     <li class=""><a href="{{ route('admin.posts.create') }}">Criar Novo</a></li>
                 </ul>
             </li>
