@@ -65,13 +65,62 @@
         </div>
     </div>
 
-    <div class="container bg-dark mb-5">
+    {{-- mensagem --}}
+
+    <div class="container bg-dark my-5">
         <div class="row text-center text-light p-3">
             <h1><i>"Vinde a mim todas as riaturas..."</i></h1>
-            <h5><i>"t is a long established fact that a reader will be distracted by the readable content of a page when looking at its layout. The point of using Lorem Ipsum is that it has a more-or-less normal distribution of letters, as opposed to using 'Content here, content here', making it look like readable English. Many desktop publishing packages and web page editors now use Lorem Ipsum as their default model text, and a search for 'lorem ipsum' will uncover many web sites still in their infancy. Various versions have evolved over the years, sometimes by accident, sometimes on purpose (injected humour and the like)."</i></h5>
+            <i>"t is a long established fact that a reader will be distracted by the readable content of a page when looking at its layout. The point of using Lorem Ipsum is that it has a more-or-less normal distribution of letters, as opposed to using 'Content here, content here', making it look like readable English. Many desktop publishing packages and web page editors now use Lorem Ipsum as their default model text, and a search for 'lorem ipsum' will uncover many web sites still in their infancy. Various versions have evolved over the years, sometimes by accident, sometimes on purpose (injected humour and the like)."</i>
         </div>
     </div>
 
+    {{-- apelação --}}
 
+    <div class="container mb-5">
+        <div class="row justify-content-center p-3">
+            <h1 class="text-center"><b>Doe-se!</b></h1>
+            Damos direção a pessoas que querem ajudar, recrutando para o evangelismo... bla bla bla, basta entrar em contato conosco e te daremos uma direção, além de aconselhamentos espirituais, temos um pessoal de plantão só para ajudá-lo! toda mudança começa com um pequeno passo. Ajudaremos uns aos outros a cumprir o propósito de cristo, que é que toda criatura conheça sua palavra! e você também pode ajudar financeiramente se preferir, o seu dinheiro será usado para um bem maior mantendo o movimento que compõe todos os projetos que voce viu acima!
+        </div>
+    </div>
 
+    {{-- testemunhos --}}
+    <div class="container  justify-content-center">
+        <div class="row">
+            <div class="col-md-6 my-5">
+                <h1>Conheça os testemunhos impactantes dos nossos membros:</h1><br>
+                <h4><i>Wallace, Lucas, Fulano e ciclano tiveram suas vidas transformadas pelo poder do senhor, viveram uma reforma interna completa e pela graça do senhor Jesus hoje creem na salvação eterna. Temos como nossa missão e objetivo de vida o propósito que o senhor Jesus nos deixou: "ide, e fazei discipulos e pregai por todas as nações".<br><br>E você? qual vai ser?</i></h4>
+            </div>
+             <div class="col-md-6">
+                <div id="carouselExampleIndicators" class="carousel slide" data-ride="carousel">
+                    <ol class="carousel-indicators">
+                    <li data-target="#carouselExampleIndicators" data-slide-to="0" class="active"></li>
+                    <li data-target="#carouselExampleIndicators" data-slide-to="1"></li>
+                    <li data-target="#carouselExampleIndicators" data-slide-to="2"></li>
+                    </ol>
+                    <div class="carousel-inner">
+                    <div class="carousel-item active">
+                        <img class=" w-100" src="    {{ asset('frontend/images/testemunho.jpg') }}
+                        " alt="First slide">
+                    </div>
+                    <div class="carousel-item">
+                        <img class=" w-100" src="    {{ asset('frontend/images/testemunho.jpg') }}
+                        " alt="Second slide">
+                    </div>
+                    <div class="carousel-item">
+                        <img class=" w-100" src="    {{ asset('frontend/images/testemunho.jpg') }}
+                        " alt="Third slide">
+                    </div>
+                    </div>
+                    <a class="carousel-control-prev" href="#carouselExampleIndicators" role="button" data-slide="prev">
+                    <span class="carousel-control-prev-icon" aria-hidden="true"></span>
+                    <span class="sr-only">Previous</span>
+                    </a>
+                    <a class="carousel-control-next" href="#carouselExampleIndicators" role="button" data-slide="next">
+                    <span class="carousel-control-next-icon" aria-hidden="true"></span>
+                    <span class="sr-only">Next</span>
+                    </a>
+                </div>
+            </div>
+        </div>
+    </div>
 @endsection
