@@ -21,7 +21,7 @@
                 <div class="col-md-3 bg-dark">
                     <div class="p-2 my-5 text-light">
                         <h4>{{ $post->titulo}}</h4>
-                        {{$post->texto}}
+                        {!! $post->texto !!}
                     </div>
                 </div>
             @endforeach

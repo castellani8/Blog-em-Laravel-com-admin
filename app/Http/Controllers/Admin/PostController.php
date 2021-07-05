@@ -4,6 +4,7 @@ namespace App\Http\Controllers\Admin;
 
 use App\Http\Controllers\Controller;
 use Illuminate\Http\Request;
+use App\Models\Posts;
 
 class PostController extends Controller
 {
@@ -36,8 +37,13 @@ class PostController extends Controller
      */
     public function store(Request $request)
     {
-        return "sadas";
-        var_dump($request->titulo);
+        $post = new Posts;
+        $post->titulo = $request->titulo;
+        $post->texto = $request->wysiwyg;
+        $post->autor = $request->autor;
+        $post->save();
+
+        return redirect()->route('index');
     }
 
     /**

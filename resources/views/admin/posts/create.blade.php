@@ -31,7 +31,7 @@
             <br><br>
             <span style="font-size: 1em">Insira o conteúdo do post: </span>
             <div class="my-1">
-            <textarea class="ckeditor form-control" name="wysiwyg-editor" required></textarea>
+            <textarea class="ckeditor form-control" name="wysiwyg" id="wysiwyg" required></textarea>
             <br>
             <label for="autor" class=""><span style="font-size: 1em">Nome do autor: </span></label>
             <input type="text" id="autor" name="autor" placeholder="Autor" size="40" required/>

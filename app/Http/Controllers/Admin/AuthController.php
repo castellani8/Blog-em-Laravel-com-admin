@@ -11,6 +11,7 @@ class AuthController extends Controller
 {
     public function showLoginForm()
     {
+
         if(Auth::check() === true){
             return redirect()->route('admin.home');
         }

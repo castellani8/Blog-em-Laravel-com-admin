@@ -23,8 +23,9 @@ class PostsFactory extends Factory
     public function definition()
     {
         return [
-            'titulo' => Str::random(10),
-            'texto' => Str::random(50),
+            'titulo' => $this->faker->title(),
+            'texto' => $this->faker->text(),
+            'autor' => $this->faker->name(),
         ];
     }
 }
