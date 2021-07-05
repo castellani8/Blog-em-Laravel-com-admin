@@ -2,6 +2,7 @@
 
 @section('content')
 
+
     <img class="img-fluid" src="{{ asset('frontend/images/capa.jpg') }}" style="width:100%;height:80vh">
     <div class="container">
         <div class="row my-3 justify-content-center text-center">
@@ -16,27 +17,14 @@
 
     <div class="container my-5">
         <div class="row">
-            <div class="col-md-4 bg-dark">
-                <div class="p-5 my-5">   </div>
-            </div>
-            <div class="col-md-4 bg-danger">
-                <div class="p-5">   </div>
-            </div>
-            <div class="col-md-4 bg-warning">
-                <div class="p-5">   </div>
-
-            </div>
-        </div>
-        <div class="row">
-            <div class="col-md-4 bg-primary">
-                <div class="p-5  my-5">   </div>
-            </div>
-            <div class="col-md-4 bg-secondary">
-                <div class="p-5">   </div>
-            </div>
-            <div class="col-md-4 bg-dark">
-                <div class="p-5">   </div>
-            </div>
+            @foreach ($posts as $post)
+                <div class="col-md-3 bg-dark">
+                    <div class="p-2 my-5 text-light">
+                        <h4>{{ $post->titulo}}</h4>
+                        {{$post->texto}}
+                    </div>
+                </div>
+            @endforeach
         </div>
     </div>
 
@@ -88,7 +76,7 @@
         <div class="row">
             <div class="col-md-6 my-5">
                 <h1>Conheça os testemunhos impactantes dos nossos membros:</h1><br>
-                <h4><i>Wallace, Lucas, Fulano e ciclano tiveram suas vidas transformadas pelo poder do senhor, viveram uma reforma interna completa e pela graça do senhor Jesus hoje creem na salvação eterna. Temos como nossa missão e objetivo de vida o propósito que o senhor Jesus nos deixou: "ide, e fazei discipulos e pregai por todas as nações".<br><br>E você? qual vai ser?</i></h4>
+                <h4><i>Wallace, Lucas, Fulano e ciclano tiveram suas vidas transformadas pelo poder do senhor, viveram uma reforma interna completa e pela graça do senhor Jesus hoje creem na salvação eterna. Temos como nossa missão e objetivo de vida o propósito que o senhor Jesus nos deixou: "ide, e fazei discipulos e pregai por todas as nações".<br><br>   E você? qual vai ser?</i></h4>
             </div>
              <div class="col-md-6">
                 <div id="carouselExampleIndicators" class="carousel slide" data-ride="carousel">
@@ -123,4 +111,6 @@
             </div>
         </div>
     </div>
+
+    
 @endsection

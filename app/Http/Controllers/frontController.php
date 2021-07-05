@@ -9,7 +9,7 @@ class frontController extends Controller
 {
     public function index()
     {
-        $posts = Posts::all();
-        return view('index');
+        $posts = Posts::all()->take(8);
+        return view('index', compact('posts', $posts));
     }
 }

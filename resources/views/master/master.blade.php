@@ -17,7 +17,7 @@
             <div class='collapse navbar-collapse' id='navbarSupportedContent'>
             <ul class='navbar-nav ml-auto mb-2 mb-lg-0 text-center'>
                 <li class='nav-item'>
-                <a class='nav-link text-light active' aria-current='page' href='index'>Home</a>
+                <a class='nav-link text-light active' aria-current='page' href='index'>início</a>
                 </li>
                 <div class='divider-vertical d-lg-block d-none my-auto'></div>
                 <li class='nav-item'>
@@ -25,11 +25,11 @@
                 </li>
                 <div class='divider-vertical d-lg-block d-none my-auto'></div>
                 <li class='nav-item'>
-                <a class='nav-link text-light' href='Projetos.php'>Projetos</a>
+                <a class='nav-link text-light' href='Projetos.php'>Blog</a>
                 </li>
                 <div class='divider-vertical d-lg-block d-none my-auto'></div>
                 <li class='nav-item'>
-                <a class='nav-link text-light' href='Paineis.php'>Painéis</a>
+                <a class='nav-link text-light' href='Paineis.php'>Doe</a>
                 </li>
                 <div class='divider-vertical d-lg-block d-none my-auto'></div>
                 <li class='nav-item'>
@@ -42,11 +42,19 @@
     <div>
         @yield('content')
     </div>    
-    <script src="{{ asset('js/app.js') }}"></script>    
-    <style>
-        .text-light{
-            color:black;
-        }
-    </style>
+    <div class="bg-dark">
+        <div class="row">
+            <div class="col-md-4">
+                
+            </div>
+            <div class="col-md-4">
+
+            </div>
+            <div class="col-md-4">
+
+            </div>
+       </div>  
+    </div>
+    <script src="{{ asset('js/app.js') }}"></script>
 </body>
 </html>
