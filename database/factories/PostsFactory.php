@@ -4,6 +4,7 @@ namespace Database\Factories;
 
 use App\Models\posts;
 use Illuminate\Database\Eloquent\Factories\Factory;
+use Illuminate\Support\Str;
 
 class PostsFactory extends Factory
 {
@@ -22,7 +23,8 @@ class PostsFactory extends Factory
     public function definition()
     {
         return [
-            //
+            'titulo' => Str::random(10),
+            'texto' => Str::random(50),
         ];
     }
 }
