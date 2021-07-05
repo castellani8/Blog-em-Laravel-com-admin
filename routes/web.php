@@ -32,3 +32,5 @@ Route::group(['prefix' => 'admin', 'namespace' => 'Admin', 'as' => 'admin.'], fu
     Route::get('logout', 'AuthController@logout')->name('logout');
 
 });
+
+testeando
