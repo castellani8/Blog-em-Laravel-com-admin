@@ -10,5 +10,6 @@ class frontController extends Controller
     public function index()
     {
         $posts = Posts::all();
+        return view('index');
     }
 }
