@@ -41,10 +41,10 @@ class PostController extends Controller
 
         $extension = $request->file('image')->extension();
 
-        $imageName =  date("m.d.y") .".". $extension;
+        $imageName =  $request->titulo .".". $extension;
         
         $path = $request->file('image')->storeAs(
-            'images', $imageName
+            'public/images', $imageName
         );
 
         $post = new Posts;

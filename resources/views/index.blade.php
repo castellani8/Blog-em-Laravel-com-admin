@@ -22,12 +22,11 @@
             <style>
                 .post-card{
                   background-size:cover;
-                  background-image:linear-gradient(to left, rgba(32, 32, 32, 0.644), rgba(39, 38, 38, 0.774)),   
-                                    url('{{ url('storage/images/' . $post->image) }}');
+                  
                 }
 
                 .post-card:hover{
-                    background-image:linear-gradient(to left, rgba(32, 32, 32, 0.281), rgba(39, 38, 38, 0.329)),   
+                    background-image:linear-gradient(to left, rgba(32, 32, 32, 0.418), rgba(39, 38, 38, 0.473)),   
                                     url('{{ url('storage/images/' . $post->image) }}');
                 }
                 
@@ -36,9 +35,10 @@
             <img src="" alt="">
 
                 <div class="col-md-3 post-card" 
-                style="">
+                style="background-image:linear-gradient(to left, rgba(32, 32, 32, 0.644), rgba(39, 38, 38, 0.774)),   
+                url('{{ url('storage/images/' . $post->image) }}');">
 
-                    <div class="p-2 py-5 text-light">
+                    <div class="p-2 py-5 text-danger">
                         <h4><b>{{ $post->titulo}}</b></h4>
                         {!! $post->texto !!}
                     </div>
