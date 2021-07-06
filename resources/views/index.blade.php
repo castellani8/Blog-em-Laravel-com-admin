@@ -3,6 +3,7 @@
 @section('content')
 
 
+
     <img class="img-fluid" src="{{ asset('frontend/images/capa.jpg') }}" style="width:100%;height:80vh">
     <div class="container">
         <div class="row my-3 justify-content-center text-center">
@@ -18,17 +19,36 @@
     <div class="container my-5">
         <div class="row">
             @foreach ($posts as $post)
-                <div class="col-md-3 bg-dark">
-                    <div class="p-2 my-5 text-light">
-                        <h4>{{ $post->titulo}}</h4>
+            <style>
+                .post-card{
+                  background-size:cover;
+                  background-image:linear-gradient(to left, rgba(32, 32, 32, 0.644), rgba(39, 38, 38, 0.774)),   
+                                    url('{{ url('storage/images/' . $post->image) }}');
+                }
+
+                .post-card:hover{
+                    background-image:linear-gradient(to left, rgba(32, 32, 32, 0.281), rgba(39, 38, 38, 0.329)),   
+                                    url('{{ url('storage/images/' . $post->image) }}');
+                }
+                
+                
+                </style>
+            <img src="" alt="">
+
+                <div class="col-md-3 post-card" 
+                style="">
+
+                    <div class="p-2 py-5 text-light">
+                        <h4><b>{{ $post->titulo}}</b></h4>
                         {!! $post->texto !!}
                     </div>
+                    
                 </div>
             @endforeach
         </div>
     </div>
 
-    {{-- projeto principal --}}
+{{-- projeto principal --}}
 
     <div class="container">
         <div class="row">
