@@ -27,6 +27,7 @@ Route::group(['prefix' => 'admin', 'namespace' => 'Admin', 'as' => 'admin.'], fu
         // Dashboard
         Route::get('home', 'AuthController@home')->name('home');
 
+        // posts
         Route::get('posts', 'PostController@index')->name('posts');
         Route::get('create/post', 'PostController@create')->name('posts.create');
         Route::post('posts.store', 'PostController@store')->name('posts.store');

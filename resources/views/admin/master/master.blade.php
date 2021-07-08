@@ -89,6 +89,12 @@
 <script src="{{ asset('backend/assets/js/libs.js') }}"></script>
 <script src="{{ asset('backend/assets/js/scripts.js') }}" type="text/javascript"></script>
 
+<script>
+    $("div.cut-375").text(function(index, currentText) {
+    return currentText.substr(0, 375) + "...";
+    });
+</script>
+
 @hasSection('js')
     @yield('js')
 @endif

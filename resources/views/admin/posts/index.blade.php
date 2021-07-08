@@ -1,3 +1,6 @@
+@extends('admin.master.master')
+@section('content')
+
 <section class="dash_content_app">
 
     <header class="dash_content_app_header">
@@ -19,61 +22,27 @@
         </div>
     </header>
 
-    <?php include('filter.php'); ?>
+    @include('admin.posts.filter')
 
+    @foreach ($posts as $post)
+        
     <div class="dash_content_app_box">
         <div class="dash_content_app_box_stage">
             <div class="realty_list">
                     <div class="realty_list_item mt-1 mb-1">
                         <div class="realty_list_item_actions_stats">
-                            <img src="assets/images/realty.jpeg" alt="">
+                            <img src="{{ url('storage/images/' . $post->image) }}" alt="">
                             <ul>
-                                <li>Venda: R$ 1.000,00</li>
-                                <li>Aluguel: R$ 1.000,00</li>
+                                <li>Criado em {{$post->created_at}}</li>
+                                <li>Modificado em {{$post->updated_at}}</li>
                             </ul>
                         </div>
 
                         <div class="realty_list_item_content">
-                            <h4>#1 Casa Residencial - Campeche</h4>
+                            <h4>{{$post->titulo}}</h4>
 
-                            <div class="realty_list_item_card">
-                                <div class="realty_list_item_card_image">
-                                    <span class="icon-realty-location"></span>
-                                </div>
-                                <div class="realty_list_item_card_content">
-                                    <span class="realty_list_item_description_title">Bairro:</span>
-                                    <span class="realty_list_item_description_content">Campeche</span>
-                                </div>
-                            </div>
-
-                            <div class="realty_list_item_card">
-                                <div class="realty_list_item_card_image">
-                                    <span class="icon-realty-util-area"></span>
-                                </div>
-                                <div class="realty_list_item_card_content">
-                                    <span class="realty_list_item_description_title">Área Útil:</span>
-                                    <span class="realty_list_item_description_content">300 m&sup2;</span>
-                                </div>
-                            </div>
-
-                            <div class="realty_list_item_card">
-                                <div class="realty_list_item_card_image">
-                                    <span class="icon-realty-bed"></span>
-                                </div>
-                                <div class="realty_list_item_card_content">
-                                    <span class="realty_list_item_description_title">Domitórios:</span>
-                                    <span class="realty_list_item_description_content">2 Quartos<br><span>Sendo 1 suítes</span></span>
-                                </div>
-                            </div>
-
-                            <div class="realty_list_item_card">
-                                <div class="realty_list_item_card_image">
-                                    <span class="icon-realty-garage"></span>
-                                </div>
-                                <div class="realty_list_item_card_content">
-                                    <span class="realty_list_item_description_title">Garagem:</span>
-                                    <span class="realty_list_item_description_content">2 Vagas<br><span>Sendo 1 cobertas</span></span>
-                                </div>
+                            <div class="cut-375">
+                                <p>{!! $post->texto !!}</p>
                             </div>
 
                         </div>
@@ -83,12 +52,17 @@
                                 <li class="icon-eye">1234 Visualizações</li>
                             </ul>
                             <div>
-                                <a href="" class="btn btn-blue icon-eye">Visualizar Imóvel</a>
                                 <a href="" class="btn btn-green icon-pencil-square-o">Editar Imóvel</a>
+                                <a href="" class="btn btn-red icon-trash">Deletar Imóvel</a>
                             </div>
                         </div>
                     </div>
             </div>
         </div>
     </div>
+
+    @endforeach
+
 </section>
+
+@endsection
