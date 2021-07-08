@@ -27,11 +27,12 @@ Route::group(['prefix' => 'admin', 'namespace' => 'Admin', 'as' => 'admin.'], fu
         // Dashboard
         Route::get('home', 'AuthController@home')->name('home');
 
-        // posts
+        // postss
         Route::get('posts', 'PostController@index')->name('posts');
         Route::get('create/post', 'PostController@create')->name('posts.create');
-        Route::post('posts.store', 'PostController@store')->name('posts.store');
+        Route::post('posts/store', 'PostController@store')->name('posts.store');
         Route::get('posts/edit/{id}', 'PostController@edit')->name('posts.edit');
+        Route::patch('posts/update/{id}', 'PostController@update')->name('posts.update');
         
     });
    

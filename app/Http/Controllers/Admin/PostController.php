@@ -38,7 +38,9 @@ class PostController extends Controller
      */
     public function store(Request $request)
     {
+
         $post = new Posts;
+
 
         if ($request->hasFile('image')){
             
@@ -52,11 +54,7 @@ class PostController extends Controller
 
             $post->image = $imageName;
 
-        } else {
-            $post->image = 'padrao.jpg';
         }
-        
-
         
         $post->titulo = $request->titulo;
         $post->texto = $request->wysiwyg;
@@ -85,9 +83,9 @@ class PostController extends Controller
      */
     public function edit($id)
     {
-        $posts = Posts::where('id', '=', $id)->get();
+        $post = Posts::where('id', $id)->get();
         // var_dump($post);
-        return view('admin.posts.edit', compact('posts', $posts));
+        return view('admin.posts.edit',)->with('post', $post[0]);;
     }
 
     /**
@@ -99,7 +97,28 @@ class PostController extends Controller
      */
     public function update(Request $request, $id)
     {
-        //
+        $post = Posts::find($id);
+
+        if ($request->hasFile('image')){
+            
+            $extension = $request->file('image')->extension();
+
+            $imageName =  $request->titulo .".". $extension;
+            
+            $path = $request->file('image')->storeAs(
+                'public/images', $imageName
+            );
+
+            $post->image = $imageName;
+
+        }
+        
+        $post->titulo = $request->titulo;
+        $post->texto = $request->wysiwyg;
+        $post->autor = $request->autor;
+        $post->save();
+        
+        return redirect()->route('admin.posts');
     }
 
     /**

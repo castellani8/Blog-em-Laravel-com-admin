@@ -24,48 +24,44 @@
 
     
     <div class="dash_content_app_box">
-    
-        <form action="{{ route('admin.posts.store') }}" enctype="multipart/form-data" method="post">
+        <form action="{{ route('admin.posts.update', $post->id) }}" enctype="multipart/form-data" method="POST">
             @csrf
+            {{ method_field('PATCH') }}
+
             <label for="titulo" class=""><span style="font-size: 1em">Título da postagem: </span></label>
-            
-            @foreach ($posts as $post)
                 
             <input type="text" id="titulo" name="titulo" placeholder="insira o titulo" size="40" value="{{ $post->titulo }}" required>
             <br><br>
             <span style="font-size: 1em">Insira o conteúdo do post: </span>
             <div class="my-1">
 
-                <textarea class="ckeditor form-control" name="wysiwyg" id="wysiwyg" value="sadfasdf" required></textarea>
+                <textarea class="ckeditor form-control" name="wysiwyg" id="wysiwyg" required></textarea>
 
                 <br>
 
-                <div class="row">
-                    <div class="col-md-3">
-                        <label for="image" class="btn" style="background-color: green">Insira a imagem do post</label>
-                        <input id="image" name="image" class="my-1 d-none" size="60" type="file" accept="image/*"  onchange="loadFile(event)"/>
-                    </div>
-                    <div class="col-5">
-                        <img id="output" src="{{ url('storage/images/' . $post->image) }}"/>
-                    </div>
-                </div>
+                <label for="image" class="btn" style="background-color: green">Insira a imagem do post</label>
+                <input id="image" name="image" class="my-1 d-none" size="60" type="file" accept="image/*"  onchange="loadFile(event)"/>
+                Preview:
+                <br>
+                
+                <img id="output" src="{{ url('storage/images/' . $post->image) }}" style="max-width: 50vh"/>
+
 
                 <br>
                 <br>
 
                 <label for="autor" class=""><span style="font-size: 1em">Nome do autor: </span></label>
-                <input type="text" id="autor" name="autor" placeholder="Autor" size="40" required/>
+                <input type="text" id="autor" name="autor" placeholder="Autor" size="40" required value="{{$post->autor}}"/>
 
                 <button type="submit" class="btn" style="background-color:green">Postar!</button>
 
             </div>
-            @endforeach
 
         </form>
         
     </div>
 </section>
-
+{{$post->texto}}
 <script>
     $(function () {
         $('input[name="files[]"]').change(function (files) {
@@ -87,9 +83,8 @@
         });
     });
 </script>
-<script src="//cdn.ckeditor.com/4.14.1/standard/ckeditor.js"></script>
 <script>
-    var element = document.getElementById('wysiwyg').value = "{!! $post->texto !!}";
+    CKEDITOR.replace( 'wysiwyg' );
 </script>
 <script>
       var loadFile = function(event) {
