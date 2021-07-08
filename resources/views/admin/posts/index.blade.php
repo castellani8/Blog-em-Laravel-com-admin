@@ -9,15 +9,13 @@
         <div class="dash_content_app_header_actions">
             <nav class="dash_content_app_breadcrumb">
                 <ul>
-                    <li><a href="">Dashboard</a></li>
+                    <li><a href="{{ route('admin.home') }}">Dashboard</a></li>
                     <li class="separator icon-angle-right icon-notext"></li>
-                    <li><a href="">Imóveis</a></li>
-                    <li class="separator icon-angle-right icon-notext"></li>
-                    <li><a href="" class="text-orange">Filtro</a></li>
+                    <li><a href="{{ route('admin.posts') }}">Posts</a></li>
                 </ul>
             </nav>
 
-            <a href="dashboard.php?app=properties/create" class="btn btn-orange icon-home ml-1">Criar Imóvel</a>
+            <a href="{{ route('admin.posts.create') }}" class="btn btn-orange icon-home ml-1">Criar Post</a>
             <button class="btn btn-green icon-search icon-notext ml-1 search_open"></button>
         </div>
     </header>
