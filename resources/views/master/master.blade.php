@@ -56,5 +56,10 @@
        </div>  
     </div>
     <script src="{{ asset('js/app.js') }}"></script>
+    <script>
+        $("div.cut-175").text(function(index, currentText) {
+        return currentText.substr(0, 175) + "...";
+        });
+    </script>
 </body>
 </html>

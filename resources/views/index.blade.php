@@ -32,15 +32,16 @@
                 
                 
                 </style>
-            <img src="" alt="">
 
                 <div class="col-md-3 post-card" 
-                style="background-image:linear-gradient(to left, rgba(32, 32, 32, 0.644), rgba(39, 38, 38, 0.774)),   
+                style="background-image:linear-gradient(to left, rgba(90, 89, 89, 0.644), rgba(109, 108, 108, 0.774)),   
                 url('{{ url('storage/images/' . $post->image) }}');">
 
                     <div class="p-2 py-5 text-danger">
                         <h4><b>{{ $post->titulo}}</b></h4>
-                        {!! $post->texto !!}
+                        <div class="cut-175">
+                            <p>{!! $post->texto !!}</p>
+                        </div>
                     </div>
                     
                 </div>
@@ -132,5 +133,6 @@
         </div>
     </div>
 
+    
     
 @endsection

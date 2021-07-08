@@ -48,10 +48,11 @@
                         <div class="realty_list_item_actions">
                             <ul>
                                 <li class="icon-eye">1234 Visualizações</li>
+                                {{-- {{$post->id}} --}}
                             </ul>
                             <div>
-                                <a href="" class="btn btn-green icon-pencil-square-o">Editar Imóvel</a>
-                                <a href="" class="btn btn-red icon-trash">Deletar Imóvel</a>
+                                <a href="{{route('admin.posts.edit', [$post->id])}}" class="btn btn-green icon-pencil-square-o">Editar Post</a>
+                                <a href="" class="btn btn-red icon-trash">Deletar Post</a>
                             </div>
                         </div>
                     </div>
