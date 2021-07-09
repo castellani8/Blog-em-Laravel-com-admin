@@ -24,18 +24,17 @@
 
     
     <div class="dash_content_app_box">
-        <form action="{{ route('admin.posts.update', $post->id) }}" enctype="multipart/form-data" method="POST">
-            @csrf
-            {{ method_field('PATCH') }}
+        <form name="validator" action="{{ route('admin.posts.update', $post->id) }}" enctype="multipart/form-data" method="POST">
+            
 
             <label for="titulo" class=""><span style="font-size: 1em">Título da postagem: </span></label>
                 
-            <input type="text" id="titulo" name="titulo" placeholder="insira o titulo" size="40" value="{{ $post->titulo }}" required>
+            <input type="text" id="titulo" name="titulo" placeholder="insira o titulo" size="40" value="{{ $post->titulo }}">
             <br><br>
             <span style="font-size: 1em">Insira o conteúdo do post: </span>
             <div class="my-1">
 
-                <textarea class="form-control" name="wysiwyg" id="wysiwyg" required>{{$post->texto}}</textarea>
+                <textarea class="form-control" name="wysiwyg" id="wysiwyg">{{$post->texto}}</textarea>
 
                 <br>
 
@@ -51,9 +50,9 @@
                 <br>
 
                 <label for="autor" class=""><span style="font-size: 1em">Nome do autor: </span></label>
-                <input type="text" id="autor" name="autor" placeholder="Autor" size="40" required value="{{$post->autor}}"/>
+                <input type="text" id="autor" name="autor" placeholder="Autor" size="40" value="{{$post->autor}}"/>
 
-                <button type="submit" class="btn" style="background-color:green">Postar!</button>
+                <button  class="btn" style="background-color:green">Postar!</button>
 
             </div>
 
@@ -61,43 +60,10 @@
         
     </div>
 </section>
-<script>
-    $(function () {
-        $('input[name="files[]"]').change(function (files) {
 
-            $('.content_image').text('');
+@endsection
 
-            $.each(files.target.files, function (key, value) {
-                var reader = new FileReader();
-                reader.onload = function (value) {
-                    $('.content_image').append(
-                        '<div class="property_image_item">' +
-                        '<div class="embed radius" ' +
-                        'style="background-image: url(' + value.target.result + '); background-size: cover; background-position: center center;">' +
-                        '</div>' +
-                        '</div>');
-                };
-                reader.readAsDataURL(value);
-            });
-        });
-    });
-</script>
-<script>
-      var loadFile = function(event) {
-        var output = document.getElementById('output');
-        output.src = URL.createObjectURL(event.target.files[0]);
-        output.onload = function() {
-        URL.revokeObjectURL(output.src) // free memory
-        }
-    };
-</script>
+@section('js')
 <script src="https://cdn.ckeditor.com/ckeditor5/29.0.0/classic/ckeditor.js"></script>   
-<script>
-    ClassicEditor
-        .create( document.querySelector( '#wysiwyg' ) )
-        .catch( error => {
-            console.error( error );
-        } );
-</script>
-
+<script src="{{ asset('backend/assets/js/create-post.js') }}"></script>
 @endsection

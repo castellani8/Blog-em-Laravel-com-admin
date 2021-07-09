@@ -97,19 +97,28 @@ class PostController extends Controller
      */
     public function update(Request $request, $id)
     {
+        // if(in_array('', $request->only('titulo', 'wysiwyg', 'autor', 'image'))){
+        //     $json['message'] = $this->message->error('Informe todos os dados para efetuar o login')->render();
+        //     return response()->json($json);
+        // }
+
+
         $post = Posts::find($id);
 
-        if ($request->hasFile('image')){
-            
-            $extension = $request->file('image')->extension();
+        if (!$request->hasFile('image')){
 
-            $imageName =  $request->titulo .".". $extension;
+            $json['message'] = $this->message->error('imagem nao enviada')->render();
+            return response()->json($json);
             
-            $path = $request->file('image')->storeAs(
-                'public/images', $imageName
-            );
+            // $extension = $request->file('image')->extension();
 
-            $post->image = $imageName;
+            // $imageName =  $request->titulo .".". $extension;
+            
+            // $path = $request->file('image')->storeAs(
+            //     'public/images', $imageName
+            // );
+
+            // $post->image = $imageName;
 
         }
         
@@ -117,8 +126,10 @@ class PostController extends Controller
         $post->texto = $request->wysiwyg;
         $post->autor = $request->autor;
         $post->save();
-        
-        return redirect()->route('admin.posts');
+
+        $json['message'] = $this->message->success('Post alterado com sucesso!')->render();
+        return response()->json($json);
+
     }
 
     /**

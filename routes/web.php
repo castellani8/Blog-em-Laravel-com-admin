@@ -32,7 +32,7 @@ Route::group(['prefix' => 'admin', 'namespace' => 'Admin', 'as' => 'admin.'], fu
         Route::get('create/post', 'PostController@create')->name('posts.create');
         Route::post('posts/store', 'PostController@store')->name('posts.store');
         Route::get('posts/edit/{id}', 'PostController@edit')->name('posts.edit');
-        Route::patch('posts/update/{id}', 'PostController@update')->name('posts.update');
+        Route::post('posts/update/{id}', 'PostController@update')->name('posts.update');
         
     });
    
