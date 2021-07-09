@@ -61,5 +61,6 @@
         return currentText.substr(0, 175) + "...";
         });
     </script>
+
 </body>
 </html>

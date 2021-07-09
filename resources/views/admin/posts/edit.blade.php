@@ -35,7 +35,7 @@
             <span style="font-size: 1em">Insira o conteúdo do post: </span>
             <div class="my-1">
 
-                <textarea class="ckeditor form-control" name="wysiwyg" id="wysiwyg" required></textarea>
+                <textarea class="form-control" name="wysiwyg" id="wysiwyg" required>{{$post->texto}}</textarea>
 
                 <br>
 
@@ -61,7 +61,6 @@
         
     </div>
 </section>
-{{$post->texto}}
 <script>
     $(function () {
         $('input[name="files[]"]').change(function (files) {
@@ -84,9 +83,6 @@
     });
 </script>
 <script>
-    CKEDITOR.replace( 'wysiwyg' );
-</script>
-<script>
       var loadFile = function(event) {
         var output = document.getElementById('output');
         output.src = URL.createObjectURL(event.target.files[0]);
@@ -94,6 +90,14 @@
         URL.revokeObjectURL(output.src) // free memory
         }
     };
+</script>
+<script src="https://cdn.ckeditor.com/ckeditor5/29.0.0/classic/ckeditor.js"></script>   
+<script>
+    ClassicEditor
+        .create( document.querySelector( '#wysiwyg' ) )
+        .catch( error => {
+            console.error( error );
+        } );
 </script>
 
 @endsection

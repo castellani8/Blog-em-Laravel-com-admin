@@ -14,9 +14,6 @@
     @yield('css')
 @endif
 
-    <script src="{{ asset('ckeditor4/ckeditor.js') }}"></script>
-
-
     <meta name="csrf-token" content="{{ csrf_token() }}">
 
     <title>GlassAdmin - Site Control</title>
